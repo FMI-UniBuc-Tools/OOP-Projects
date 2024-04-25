@@ -6,10 +6,10 @@
 
 ## Startup
 - Run `npm i` server-side/client-side to download and install the required packages
-- Enable the Redis service (temporarily): `sudo service redis-server start`
+- Enable the Redis service (temporarily): `sudo service redis-server start` (Linux distros; WSL installation required for Windows machines) 
 - Start Redis: `redis-cli`
 - Start the service of your DBMS
-- Populate the database with the `fmi_app_db.sql` script
+- <del>Populate the database with the fmi_app_db.sql script</del> Migrate DB via Sequelize
 - Change the `.env` sample according to your configuration
 	- Default backend port: `5000`
 	- Default frontend port: `5173`
