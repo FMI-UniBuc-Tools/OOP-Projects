@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table';
 
 /*
 
-!!! TODO - Handle query in the BE - See client/mysqlQueryTest.js
+!!! TODO - Handle query in the BE - See server/mysqlQueryTest.js
 
 import dotenv from 'dotenv';
 import { dirname, resolve } from 'path';
@@ -124,11 +124,17 @@ function UserImport(){
   
        reader.readAsArrayBuffer(file);
     };
+
+    function removeData(){
+      setData([])
+      setSuccess(false)
+      document.getElementById("import-data").value = "";
+    }
   
     return (
       <>
       <div className="col text-center">
-      <input className = "border border-3" type="file" accept=".xlsx" onChange={handleFileUpload} />
+      <input className="border border-3" type="file" accept=".xlsx" onChange={handleFileUpload} id="import-data"/>
         <br/>
         <br/>
         {data.length > 0 && (
@@ -171,9 +177,15 @@ function UserImport(){
 
         {/*Handle request in the BE */}
         {success && 
-            <Button className="btn btn-success d-inline-block" variant="primary" type="submit">
+          <div>
+            <Button className="btn btn-success d-inline-block m-2" variant="primary" type="submit">
                 Add All
-            </Button>}
+            </Button>
+            <Button className="btn btn-danger d-inline-block" variant="primary" type="submit" onClick={removeData}>
+                Remove File
+            </Button>
+            </div>
+            }
       </div>
       </>
     );
