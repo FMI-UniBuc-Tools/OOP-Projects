@@ -15,7 +15,7 @@ export default class Project extends Model {
                     type: DataTypes.UUID,
                     allowNull: false,
                     references: {
-                        model: 'User',
+                        model: 'app.user',
                         key: 'user_id',
                     },
                 },
@@ -23,7 +23,7 @@ export default class Project extends Model {
                     type: DataTypes.UUID,
                     allowNull: false,
                     references: {
-                        model: 'Class',
+                        model: 'app.class',
                         key: 'class_id',
                     },
                 },
