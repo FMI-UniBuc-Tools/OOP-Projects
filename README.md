@@ -1,7 +1,7 @@
 # Installation guide
 ## Software requirements
 - Node.js (+ npm)
-- A relational database management system (DBMS)
+- A relational database management system (DBMS) - Sequelize Compatible DBMSs: https://sequelize.org/docs/v6/
 - Redis
 
 ## Startup
@@ -14,9 +14,9 @@
 	- Default backend port: `5000`
 	- Default frontend port: `5173`
     - Default Redis port: `6379`
-- Start the backend server: `nodemon`
+- Start the backend server: `nodemon server.js`
   - Alternate mock server can be found in `src/json-server`
-- Start the frontend server: `npm run dev`
+- Start the frontend server: /client `npm run dev`
 
 ## Database schema
 ![Database schema](https://github.com/Nubaz/FMI_POO_Interface/blob/StudentIndexFixes/DB_Diagram.png?raw=true)
